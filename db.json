@@ -1,0 +1,24 @@
+{
+  "contacts": [
+    {
+      "name": "max",
+      "number": "+324324324323",
+      "id": 7
+    },
+    {
+      "name": "Gomer",
+      "number": "+66666666666",
+      "id": 8
+    },
+    {
+      "name": "redux",
+      "number": "+66666666666",
+      "id": 9
+    },
+    {
+      "name": "vdvd",
+      "number": "+66666666666",
+      "id": 10
+    }
+  ]
+}

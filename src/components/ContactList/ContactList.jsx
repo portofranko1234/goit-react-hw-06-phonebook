@@ -1,30 +1,31 @@
 import { useSelector, useDispatch } from "react-redux";
+import { getVisibleContacts } from "../Redux/Contacts/contacts-selectors";
+import * as operations from '../Redux/Contacts/contacts-operations';
 
-import { getFiltredContacts } from "../Redux/Contacts/contacts-selectors";
+function ContactList() {
 
-import actions from "../Redux/Contacts/contacts-action";
-
-const ContactList = () => {
-  const contact = useSelector(getFiltredContacts);
+  const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
+  const onDeleteContact = id => dispatch(operations.deleteContact(id));
+
   return (
     <ul>
-      {contact.map(({ id, name, number }) => (
-        <li key={id}>
-          <p>
-            {name}
-            <span>{number}</span>
+      {contacts.map(({ id, name, number }) => (
+        <li key={id} >
+          <p >
+            {name}: {number}
           </p>
           <button
             type="button"
-            onClick={() => dispatch(actions.deleteContact(id))}
+            onClick={() => onDeleteContact(id)}
+            
           >
-            Удалить
+            Delete
           </button>
         </li>
       ))}
     </ul>
   );
-};
+}
 
 export default ContactList;

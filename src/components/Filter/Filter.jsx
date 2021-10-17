@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getFilter } from "../Redux/Contacts/contacts-selectors";
-import actions from "../Redux/Contacts/contacts-action";
+import * as actions from '../Redux/Contacts/contacts-actions';
 
 const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const onChange = (e) => {
-    dispatch(actions.changeFilter(e.currentTarget.value));
+    dispatch(actions.changeFilter(e.target.value));
   };
   return (
     <label>
