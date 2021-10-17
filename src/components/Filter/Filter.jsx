@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getFilter } from "../Redux/Contacts/contacts-selectors";
+import { getFilterValue } from "../Redux/Contacts/contacts-selectors";
 import * as actions from '../Redux/Contacts/contacts-actions';
 
 const Filter = () => {
-  const filter = useSelector(getFilter);
+  const filter = useSelector(getFilterValue);
   const dispatch = useDispatch();
 
   const onChange = (e) => {

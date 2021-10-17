@@ -11,7 +11,7 @@ import {
   fetchContactSuccess,
   fetchContactError,
   changeFilter,
-} from "./contacts-actions";
+} from "../Contacts/contacts-actions";
 
 const items = createReducer([], {
   [fetchContactSuccess]: (state, { payload }) => payload,
@@ -26,7 +26,7 @@ const loading = createReducer(false, {
   [fetchContactError]: () => false,
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
-  [addContactError]: () => false,
+  [addContactError]: () => true,
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
   [deleteContactError]: () => false,
